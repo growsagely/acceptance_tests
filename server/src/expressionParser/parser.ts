@@ -1,7 +1,6 @@
 import { Token, tokenize } from "./tokenizer";
 
 function parse(tokens: Token[]): number {
-  console.log("Parsing tokens: ", tokens);
   if (tokens.length === 1) {
     return parseFloat(tokens[0].value);
   }
