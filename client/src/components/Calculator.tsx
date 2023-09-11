@@ -9,16 +9,26 @@ const Calculator: React.FC = () => {
   };
 
   const handleEvaluate = () => {
-    try {
-      // This is not the safest way to evaluate an expression,
-      // but it's a simple way to handle it for this example.
-      // In a real-world application, you might want to use a
-      // library or a different method to evaluate expressions safely.
-      const evalResult = eval(expression);
-      setResult(evalResult);
-    } catch (error) {
-      setResult("Error");
-    }
+    fetch("http://localhost:4000/evaluate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        expression: expression,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.result !== undefined) {
+          setResult(data.result);
+        } else if (data.error) {
+          setResult("Error");
+        }
+      })
+      .catch((err) => {
+        setResult("Error");
+      });
   };
 
   const handleClear = () => {
