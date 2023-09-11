@@ -4,9 +4,10 @@
   "description": "Exercises for the codifying acceptance tests workshop",
   "main": "index.js",
   "scripts": {
+    "start:testbrowser": "podman run -d -p 4444:4444 --name selenium-chrome selenium/standalone-chrome:latest",
     "start:backend": "npx ts-node server/src/server.ts",
     "start:frontend": "cd client && npm start",
-    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\" \"npm run start:testbrowser\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

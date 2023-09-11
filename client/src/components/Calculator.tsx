@@ -9,7 +9,7 @@ const Calculator: React.FC = () => {
   };
 
   const handleEvaluate = () => {
-    fetch("http://localhost:4000/evaluate", {
+    fetch(`${process.env.REACT_APP_BASE_URL}/evaluate`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

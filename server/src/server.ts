@@ -11,6 +11,7 @@ app.use(require("cors")());
 
 app.post("/evaluate", (req, res) => {
   const expression = req.body.expression;
+  console.log(`Received expression: ${expression}`);
 
   if (!expression) {
     return res.status(400).send({
@@ -20,8 +21,10 @@ app.post("/evaluate", (req, res) => {
 
   try {
     const result = evaluateExpression(expression);
+    console.log(`Result: ${result}`);
     return res.send({ result });
   } catch (error) {
+    console.log(`Error: ${error}`);
     return res.status(400).send({
       error: "Invalid expression.",
     });
