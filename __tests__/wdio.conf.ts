@@ -8,7 +8,7 @@ export const config: Options.Testrunner = {
   // WebdriverIO supports running e2e tests as well as unit and component tests.
   runner: "local",
   autoCompileOpts: {
-    autoCompile: true,
+    autoCompile: false,
     tsNodeOpts: {
       project: "./tsconfig.json",
       transpileOnly: true,
