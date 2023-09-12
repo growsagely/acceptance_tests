@@ -2,6 +2,7 @@
 
 ## :warning: For demonstration purposes, this code prioritizes simplicity over best practices and is not suitable for production.
 
+Install prerequisites:
 ``` bash
 npm install -g allure-commandline
 ```
