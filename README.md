@@ -127,3 +127,7 @@ Create a new feature to the parser to enable exponents.
       }
     }
     ```
+1. Enjoy a nice dopamine hit
+    ``` bash
+    npm test
+    ```
