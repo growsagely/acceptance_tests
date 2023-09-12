@@ -1,7 +1,8 @@
 # Acceptance Test Workshop
 
-## :warning: For demonstration purposes, this code prioritizes simplicity over best practices and is not suitable for production.
+# :warning: For demonstration purposes, this code prioritizes simplicity over best practices and is not suitable for production.
 
+## Setup
 Install prerequisites:
 ``` bash
 npm install -g allure-commandline
@@ -27,3 +28,9 @@ Run reports:
 ```bash
 npm run report
 ```
+
+## Exercise 1
+Outcome: Update the application to evaluate exponents:
+
+### PM
+Create a new feature
