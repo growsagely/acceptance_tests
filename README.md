@@ -65,7 +65,8 @@ Create a new feature to the parser to enable exponents.
   npm test
   ```
 1. Modify code to pass tests
-  `server/src/expressionParser/tokenizer.ts`
+
+  File = `server/src/expressionParser/tokenizer.ts`
   ``` diff
   export function tokenize(expression: string): Token[] {
   -  const regex = /([\+\-\*\/])|(\d+(\.\d+)?)/g;
