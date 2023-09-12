@@ -1,4 +1,6 @@
 import type { Options } from "@wdio/types";
+let reportAggregator: ReportGenerator;
+
 export const config: Options.Testrunner = {
   //
   // ====================
@@ -62,7 +64,7 @@ export const config: Options.Testrunner = {
   path: "/wd/hub/",
   capabilities: [
     {
-      browserName: "chrome"
+      browserName: "chrome",
     },
   ],
 
@@ -135,7 +137,17 @@ export const config: Options.Testrunner = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: https://webdriver.io/docs/dot-reporter
-  reporters: ["spec"],
+  reporters: [
+    "spec",
+    [
+      "allure",
+      {
+        outputDir: "allure-results",
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+      },
+    ],
+  ],
 
   //
   // If you are using Cucumber you need to specify the location of your step definitions.
@@ -177,8 +189,7 @@ export const config: Options.Testrunner = {
    * @param {object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  // onPrepare: function (config, capabilities) {
-  // },
+  onPrepare: function (config, capabilities) {},
   /**
    * Gets executed before a worker process is spawned and can be used to initialise specific service
    * for that worker as well as modify runtime environments in an async fashion.
@@ -319,8 +330,7 @@ export const config: Options.Testrunner = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {<Object>} results object containing test results
    */
-  // onComplete: function(exitCode, config, capabilities, results) {
-  // },
+  onComplete: function (exitCode, config, capabilities, results) {},
   /**
    * Gets executed when a refresh happens.
    * @param {string} oldSessionId session ID of the old session
