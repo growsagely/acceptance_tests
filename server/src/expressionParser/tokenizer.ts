@@ -4,7 +4,7 @@ export type Token = {
 };
 
 export function tokenize(expression: string): Token[] {
-  const regex = /([\+\-\*\/])|(\d+(\.\d+)?)/g;
+  const regex = /([\+\-\*\^\/])|(\d+(\.\d+)?)/g;
   const tokens: Token[] = [];
   let match;
 

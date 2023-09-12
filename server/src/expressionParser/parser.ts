@@ -28,6 +28,8 @@ function parse(tokens: Token[]): number {
     case "/":
       if (rightValue === 0) throw new Error("Division by zero.");
       return leftValue / rightValue;
+    case "^":
+      return leftValue ** rightValue;
     default:
       throw new Error("Unknown operator: " + operator.value);
   }
