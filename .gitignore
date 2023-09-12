@@ -129,6 +129,6 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-./allure-results
-./allure-report
-./reports
+allure-results/
+allure-report/
+reports/

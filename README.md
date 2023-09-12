@@ -19,8 +19,13 @@ Start the app:
 npm run start
 ```
 
-Open another cmd window (or a tmux pane if you're awesome)
+Run tests using another cmd window (or a tmux pane if you're awesome):
 ``` bash
 cd __tests__
 npm test
+```
+
+Run reports:
+```bash
+npm run report
 ```
