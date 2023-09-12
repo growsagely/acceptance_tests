@@ -57,13 +57,16 @@ Create a new feature to the parser to enable exponents.
     git pull
     git checkout exponent_feature
     ```
-1. Examine test failure
+1. Start the test server
     ``` bash
     npm start
-    # new cmd window
+    ```
+1. Examine test failure (requires a new cmd window)
+    ``` bash
     cd __tests__
     npm test
     ```
+1. Close the server by pressing `<Ctrl>+C`
 1. Modify `server/src/expressionParser/tokenizer.ts`
     ``` diff
     export function tokenize(expression: string): Token[] {
@@ -127,7 +130,12 @@ Create a new feature to the parser to enable exponents.
       }
     }
     ```
-1. Enjoy a nice dopamine hit
+1. Restart the server
     ``` bash
+    npm start
+    ```
+1. Enjoy a nice dopamine hit (requires new cmd window)
+    ``` bash
+    cd __test__
     npm test
     ```
