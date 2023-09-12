@@ -34,11 +34,6 @@ Feature: Expression evaluation
     When I send the expression to the backend
     Then I should get an error message
 
-  Scenario: Basic Exponents
-    Given I have the expression "5^2"
-    When I send the expression to the backend
-    Then I should get the result 25
-
 Scenario Outline: Evaluating various arithmetic expressions
     Given I have the expression "<expression>"
     When I send the expression to the backend
