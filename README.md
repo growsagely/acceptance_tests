@@ -2,9 +2,20 @@
 
 ## :warning: For demonstration purposes, this code prioritizes simplicity over best practices and is not suitable for production.
 
-Run this demo:
+### Prerequisites
 ``` bash
-npm i
+npm install -g allure-commandline
+```
+
+
+### Demo
+Install dependencies:
+``` bash
+find . -maxdepth 2 -name 'package.json' ! -path './node_modules/*' -print0 | xargs -0 -n1 dirname | sort -u | xargs -I {} npm install --prefix {}
+```
+
+Start the app:
+``` bash
 npm run start
 ```
 
