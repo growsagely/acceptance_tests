@@ -36,20 +36,20 @@ Outcome: Update the application to evaluate exponents:
 Create a new feature to the parser to enable exponents.
 
 1. Create a branch for the feature
-  ``` bash
-  git checkout -b exponent_feature
-  ```
+    ``` bash
+    git checkout -b exponent_feature
+    ```
 1. Add the scenario to `__test__/features/expression_evaluation.feature`
-  ```
-  Scenario: Basic Exponents
-    Given I have the expression "5^2"
-    When I send the expression to the backend
-    Then I should get the result 25
-  ```
+    ```
+    Scenario: Basic Exponents
+      Given I have the expression "5^2"
+      When I send the expression to the backend
+      Then I should get the result 25
+    ```
 1. Push branch for dev
-  ``` bash
-  git push --set-upstream origin exponent_feature
-  ```
+    ``` bash
+    git push --set-upstream origin exponent_feature
+    ```
 
 ## Dev
 1. Pull branch
@@ -66,7 +66,7 @@ Create a new feature to the parser to enable exponents.
   ```
 1. Modify code to pass tests
 
-  File = `server/src/expressionParser/tokenizer.ts`
+  File: `server/src/expressionParser/tokenizer.ts`
   ``` diff
   export function tokenize(expression: string): Token[] {
   -  const regex = /([\+\-\*\/])|(\d+(\.\d+)?)/g;
