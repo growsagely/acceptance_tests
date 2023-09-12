@@ -146,6 +146,20 @@ export const config: Options.Testrunner = {
         disableWebdriverScreenshotsReporting: true,
       },
     ],
+    [
+      "html-nice",
+      {
+        outputDir: "./reports/html-reports/",
+        filename: "report.html",
+        reportTitle: "Test Report Title",
+        linkScreenshots: true,
+        //to show the report in a browser when done
+        showInBrowser: true,
+        collapseTests: false,
+        //to turn on screenshots after every test
+        useOnAfterCommandForScreenshot: false,
+      },
+    ],
   ],
 
   //

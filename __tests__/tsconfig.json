@@ -1,25 +1,25 @@
 {
+  "ts-node": {
     "compilerOptions": {
-        "moduleResolution": "node",
-        "module": "commonjs",
-        "target": "es2022",
-        "types": [
-            "node",
-            "@wdio/globals/types",
-            "expect-webdriverio",
-            "@wdio/cucumber-framework"
-        ],
-        "skipLibCheck": true,
-        "noEmit": true,
-        "allowImportingTsExtensions": true,
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "strict": true,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "noFallthroughCasesInSwitch": true
-    },
-    "include": [
-        "features"
-    ]
+      "module": "commonjs",
+      "esModuleInterop": true
+    }
+  },
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es2022",
+    "esModuleInterop": true,
+    "types": ["node", "@wdio/globals/types", "expect-webdriverio"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["features"]
 }
