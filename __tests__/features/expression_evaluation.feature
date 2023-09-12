@@ -1,5 +1,9 @@
 Feature: Expression evaluation
 
+  As a user
+  I want to evaluate mathematical expressions
+  So that I can find the result of my calculations
+
   Scenario: Basic addition
     Given I have the expression "1 + 1"
     When I send the expression to the backend
@@ -29,6 +33,11 @@ Feature: Expression evaluation
     Given I have the expression "1 +"
     When I send the expression to the backend
     Then I should get an error message
+
+  Scenario: Basic Exponents
+    Given I have the expression "5^2"
+    When I send the expression to the backend
+    Then I should get the result 25
 
 Scenario Outline: Evaluating various arithmetic expressions
     Given I have the expression "<expression>"

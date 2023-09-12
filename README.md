@@ -33,4 +33,16 @@ npm run report
 Outcome: Update the application to evaluate exponents:
 
 ### PM
-Create a new feature
+Create a new feature to the parser to enable exponents.
+
+1. Create a branch for the feature
+  ``` bash
+  git checkout -b exponent_featue
+  ```
+2. Add the scenario to `__test__/features/expression_evaluation.feature`
+  ```
+  Scenario: Basic Exponents
+    Given I have the expression "5^2"
+    When I send the expression to the backend
+    Then I should get the result 25
+  ```
