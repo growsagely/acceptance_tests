@@ -37,7 +37,7 @@ Create a new feature to the parser to enable exponents.
 
 1. Create a branch for the feature
   ``` bash
-  git checkout -b exponent_featue
+  git checkout -b exponent_feature
   ```
 2. Add the scenario to `__test__/features/expression_evaluation.feature`
   ```
@@ -45,4 +45,12 @@ Create a new feature to the parser to enable exponents.
     Given I have the expression "5^2"
     When I send the expression to the backend
     Then I should get the result 25
+  ```
+3. Demonstrate test failure
+  ```
+  npm test
+  ```
+4. Push branch for dev
+  ``` bash
+  git push --set-upstream origin exponent_feature
   ```
