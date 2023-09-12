@@ -1,4 +1,6 @@
 import type { Options } from "@wdio/types";
+
+import { ReportGenerator, HtmlReporter } from "wdio-html-nice-reporter";
 let reportAggregator: ReportGenerator;
 
 export const config: Options.Testrunner = {
@@ -147,6 +149,21 @@ export const config: Options.Testrunner = {
         disableWebdriverScreenshotsReporting: true,
       },
     ],
+    [
+      "html-nice",
+      {
+        outputDir: "./reports/html-reports/",
+        filename: "report.html",
+        reportTitle: "Test Report Title",
+        linkScreenshots: true,
+        //to show the report in a browser when done
+        showInBrowser: true,
+        collapseTests: false,
+        //to turn on screenshots after every test
+        useOnAfterCommandForScreenshot: false,
+        produceHtml: true
+      },
+    ],
   ],
 
   //
@@ -189,7 +206,17 @@ export const config: Options.Testrunner = {
    * @param {object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  onPrepare: function (config, capabilities) {},
+  onPrepare: function (config, capabilities) {
+    reportAggregator = new ReportGenerator({
+      outputDir: "./reports/html-reports/",
+      filename: "master-report.html",
+      reportTitle: "Master Report",
+      // browserName: capabilities.browserName,
+      browserName: "chrome",
+      collapseTests: true,
+    });
+    // reportAggregator.clean();
+  },
   /**
    * Gets executed before a worker process is spawned and can be used to initialise specific service
    * for that worker as well as modify runtime environments in an async fashion.
@@ -330,7 +357,11 @@ export const config: Options.Testrunner = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {<Object>} results object containing test results
    */
-  onComplete: function (exitCode, config, capabilities, results) {},
+  onComplete: function (exitCode, config, capabilities, results) {
+    (async () => {
+      await reportAggregator.createReport(null);
+    })();
+  },
   /**
    * Gets executed when a refresh happens.
    * @param {string} oldSessionId session ID of the old session
